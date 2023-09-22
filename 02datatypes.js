@@ -11,9 +11,13 @@ console.log(3
     //bigint => it is used when we have to take a big value 
     //boolean => true/false
     //null => standalone (when we want to return no value in case of error)
-    //undefined => when only variable is defined but no value is assigned to that variable.
-    // symbol => when to define something unique 
 
+    //undefined => when only variable is defined but no value is assigned to that variable.
+     let state;
+     console.log(state); // example for undefined
+
+    // symbol => when to define something unique 
+    
     // object
 
     console.log(typeof "Himanshu"); //it is used when we want to know the data type of a value or a variable
