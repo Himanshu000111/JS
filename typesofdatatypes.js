@@ -23,3 +23,10 @@ function myfun (age2)
 console.log(myfun(17));
  //one more thing the type of null will always give object as return 
  //and all non-primitive data types type is function object.
+
+ ****************************************************************************************************
+
+ //Memory in java script
+ //There are two types of memory in java script
+ //Stack[Primitive]  and Heap[Non Primitive]
+ //The primitive data types are stored in stack memory and non primitive data types are stored in heap memory.
