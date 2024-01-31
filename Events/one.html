@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+       
+   </div>
+   <span id="demo" style=" display: block; text-align: center;"></span>
+</body>
+<script>
+//document.getElementById("japan").addEventListener("click", function(e){
+//    alert("Japan photo clicked")
+//})
+
+//Event Propagation 
+//In event propagation we have generally two events (event bubbling) and (event capturing)
+//by default the event is false which shows (event bubbling)
+//Let us take an example
+
+//document.getElementById("images").addEventListener("click", function(e){
+ //   console.log("Clicked inside the ul")
+//}, false)
+//document.getElementById("japan").addEventListener("click", function(e){
+  //  console.log("Clicked on japan")
+//}, false)// in this when we click on japam photo first it will print this console log and then it will print
+// ul console log and this is calle bubbling event which follows inside to outside approach .
+
+// now let's see capturing event approach.
+//document.getElementById("images").addEventListener("click", function(e){
+//    console.log("Clicked inside the ul")
+//}, true)
+//document.getElementById("japan").addEventListener("click", function(e){
+//    console.log("Clicked on japan")
+//}, true)// in this if we will click on japan photo it will print first ul console anfd then  japan console whichj means it follow top to bottom approach
+
+//now lets take an example in which we want to remove the image on which we click
+
+//document.getElementById("images").addEventListener("click",function(e){
+  //  
+   // if(e.target.tagName === "IMG"){
+     //   console.log(e.target.tagName)
+    //  e.target.parentNode.remove()
+   // }
+//})
+
+//Example for clientx , clientY, Screenx, Screeny
+document.querySelector("#images").addEventListener("click", function(e){
+    if(e.target.tagName === "IMG"){
+    const cx = e.clientX;
+    const cy = e.clientY;
+    const sx = e.screenX;
+    const sy = e.screenY;
+  let p = document.getElementById("demo")
+   p.innerHTML = `cx: ${cx} <br/> cy:${cy} <br/> sx:${sx}<br/> sy:${sy}`
+}})
+
+</script>
